@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""app.py to connect to API"""
 from flask import Flask, make_response, jsonify
 from models import storage
 import os
