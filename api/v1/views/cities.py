@@ -7,14 +7,13 @@ from models.city import City
 from models.state import State
 
 
-@app_views.route('states/<state_id>/cities/', methods=['GET'])
+@app_views.route('/states/<state_id>/cities/', methods=['GET'])
 def get_state_cities(state_id):
-    """get cities in a specified state"""
+    """Retrieves get cities in a specified state"""
     state = storage.get(State, state_id)
     if state is None:
         return abort(404)
     cities = []
-    """Retrieves City objects"""
     for city in storage.all(City).values():
         if city.state_id == state_id:
             cities.append(city.to_dict())
@@ -57,7 +56,7 @@ def post_city(state_id):
     return make_response(jsonify(city.to_dict()), 201)
 
 
-@app_views.route('cities/<city_id>', methods=['PUT'])
+@app_views.route('/cities/<city_id>', methods=['PUT'])
 def put_city(city_id):
     """Updates City object"""
     city = storage.get(City, city_id)
