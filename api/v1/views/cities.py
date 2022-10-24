@@ -9,6 +9,7 @@ from models.state import State
 
 @app_views.route('states/<state_id>/cities/', methods=['GET'])
 def get_state_cities(state_id):
+    """get cities in a specified state"""
     state = storage.get(State, state_id)
     if state is None:
         return abort(404)
@@ -22,7 +23,7 @@ def get_state_cities(state_id):
 
 @app_views.route('/cities/<city_id>', methods=['GET'])
 def get_city(city_id):
-    """Gets State object by id"""
+    """Gets City object by id"""
     city = storage.get(City, city_id)
     if city is None:
         return abort(404)
@@ -31,7 +32,7 @@ def get_city(city_id):
 
 @app_views.route('/cities/<city_id>', methods=['DELETE'])
 def delete_city(city_id):
-    """Deletes State object by id"""
+    """Deletes City object by id"""
     city = storage.get(City, city_id)
     if city is None:
         return abort(404)
