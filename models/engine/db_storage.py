@@ -38,6 +38,7 @@ class DBStorage:
                                              HBNB_MYSQL_HOST,
                                              HBNB_MYSQL_DB))
         if HBNB_ENV == "test":
+            print('TEST')
             Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
@@ -58,6 +59,10 @@ class DBStorage:
     def save(self):
         """commit all changes of the current database session"""
         self.__session.commit()
+
+    def rollback(self):
+        """commit all changes of the current database session"""
+        self.__session.rollback()
 
     def delete(self, obj=None):
         """delete from the current database session obj if not None"""
@@ -80,10 +85,8 @@ class DBStorage:
         if cls is not None and id is not None and\
            type(id) is str and cls in classes.values():
             result = self.__session.query(cls).filter(cls.id == id).first()
-            print(1)
             return result
         else:
-            print(2)
             return None
 
     def count(self, cls=None):

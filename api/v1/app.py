@@ -32,4 +32,5 @@ if __name__ == "__main__":
     """
     MAIN Flask App
     """
+    app.run(debug=True)
     app.run(host=host, port=port)
