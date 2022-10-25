@@ -10,7 +10,7 @@ from models.review import Review
 @app_views.route('/places/<place_id>/reviews/', methods=['GET'])
 def get_place_reviews(place_id):
     """get reviews in a specified place"""
-    place = storage.get(State, place_id)
+    place = storage.get(Place, place_id)
     if place is None:
         return abort(404)
     reviews = []
