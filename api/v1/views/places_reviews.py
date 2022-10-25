@@ -66,10 +66,6 @@ def put_review(review_id):
         return abort(404)
     if not request.get_json():
         return make_response(jsonify({'error': 'Not a JSON'}), 400)
-    elif 'user_id' not in request.get_json():
-        return make_response(jsonify({'error': 'Missing user_id'}), 400)
-    elif 'text' not in request.get_json():
-        return make_response(jsonify({'error': 'Missing text'}), 400)
 
     for key, value in request.get_json().items():
         if key not in [
