@@ -2,6 +2,7 @@
 """app.py to connect to API"""
 from api.v1.views import app_views
 from flask import Flask, make_response, jsonify
+from flask_cors import CORS
 from models import storage
 import os
 
@@ -15,6 +16,7 @@ port = os.getenv('HBNB_API_PORT', 5000)
 
 app.register_blueprint(app_views)
 
+cors = CORS(app, resources={r"/api/v1/*": {"origins": "0.0.0.0"}})
 
 @app.teardown_appcontext
 def teardown_appcontext(code):

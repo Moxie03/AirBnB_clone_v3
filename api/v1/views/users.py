@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-"""index.py routes to connect to API"""
+"""usersw.py routes to connect to API"""
 from api.v1.views import app_views
 from flask import abort, jsonify, make_response, request
 from models import storage
+from models.city import City
+from models.place import Place
 from models.user import User
 
 
