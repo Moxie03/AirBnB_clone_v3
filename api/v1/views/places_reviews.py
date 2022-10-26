@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""index.py routes to connect to API"""
+"""places reviews.py routes to connect to API"""
 from api.v1.views import app_views
 from flask import abort, jsonify, make_response, request
 from models import storage
