@@ -8,8 +8,8 @@ from models.amenity import Amenity
 
 @app_views.route('/amenities/', methods=['GET'])
 def get_amenities():
-    amenities = []
     """Retrieves all Amenity objects"""
+    amenities = []
     for obj in storage.all(Amenity).values():
         amenities.append(obj.to_dict())
     return jsonify(amenities)
