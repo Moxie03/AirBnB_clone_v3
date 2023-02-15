@@ -155,8 +155,7 @@ No known bugs at this time.
 
 ## Authors
 Kayode Oluwatobiloba - [Github](https://github.com/Moxie03)  
-Victor Aliche - [Github](https://github.com/jhuang10123)
+Collins Ojougboh - [Github](https://github.com/emekeo)
 
-Second part of Airbnb: Joann Vuong
 ## License
 Public Domain. No copy write protection. 
